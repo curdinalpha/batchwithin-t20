@@ -1,0 +1,72 @@
+Python 3.12.16
+test_bad_parameters (tests.test_core.TestProtocol.test_bad_parameters) ... ok
+test_double_complete_idempotent (tests.test_core.TestProtocol.test_double_complete_idempotent) ... ok
+test_offer_after_complete_rejected (tests.test_core.TestProtocol.test_offer_after_complete_rejected) ... ok
+test_time_backwards_rejected (tests.test_core.TestProtocol.test_time_backwards_rejected) ... ok
+test_trace_records_transitions (tests.test_core.TestProtocol.test_trace_records_transitions) ... ok
+test_arrival_just_before_deadline_joins_window (tests.test_core.TestTransitions.test_arrival_just_before_deadline_joins_window) ... ok
+test_arrivals_never_move_deadline (tests.test_core.TestTransitions.test_arrivals_never_move_deadline) ... ok
+test_buffer_bound (tests.test_core.TestTransitions.test_buffer_bound) ... ok
+test_burst_same_instant (tests.test_core.TestTransitions.test_burst_same_instant) ... ok
+test_catch_up_seals_at_deadline_not_at_now (tests.test_core.TestTransitions.test_catch_up_seals_at_deadline_not_at_now) ... ok
+test_closed_when_ready_full_and_active_sealed (tests.test_core.TestTransitions.test_closed_when_ready_full_and_active_sealed) ... ok
+test_complete_after_size_flush_no_empty_chunk (tests.test_core.TestTransitions.test_complete_after_size_flush_no_empty_chunk) ... ok
+test_complete_flushes_partial (tests.test_core.TestTransitions.test_complete_flushes_partial) ... ok
+test_complete_on_empty_emits_nothing (tests.test_core.TestTransitions.test_complete_on_empty_emits_nothing) ... ok
+test_complete_while_closed_drains (tests.test_core.TestTransitions.test_complete_while_closed_drains) ... ok
+test_deadline_due_at_complete_wins (tests.test_core.TestTransitions.test_deadline_due_at_complete_wins) ... ok
+test_deadline_sealed_while_ready_full_keeps_exact_time (tests.test_core.TestTransitions.test_deadline_sealed_while_ready_full_keeps_exact_time) ... ok
+test_delivery_waits_for_request (tests.test_core.TestTransitions.test_delivery_waits_for_request) ... ok
+test_idle_to_filling_arms_fixed_deadline (tests.test_core.TestTransitions.test_idle_to_filling_arms_fixed_deadline) ... ok
+test_k_equals_one (tests.test_core.TestTransitions.test_k_equals_one) ... ok
+test_max_ready_larger_queue (tests.test_core.TestTransitions.test_max_ready_larger_queue) ... ok
+test_pulls_never_move_deadline (tests.test_core.TestTransitions.test_pulls_never_move_deadline) ... ok
+test_request_after_done_is_noop (tests.test_core.TestTransitions.test_request_after_done_is_noop) ... ok
+test_request_reopens_closed (tests.test_core.TestTransitions.test_request_reopens_closed) ... ok
+test_request_waits_for_chunk (tests.test_core.TestTransitions.test_request_waits_for_chunk) ... ok
+test_size_seal_at_kth_admission (tests.test_core.TestTransitions.test_size_seal_at_kth_admission) ... ok
+test_tie_deadline_before_arrival (tests.test_core.TestTransitions.test_tie_deadline_before_arrival) ... ok
+test_tie_deadline_before_request (tests.test_core.TestTransitions.test_tie_deadline_before_request) ... ok
+test_time_seal_exactly_at_deadline (tests.test_core.TestTransitions.test_time_seal_exactly_at_deadline) ... ok
+test_all_small_schedules (tests.test_properties.TestExhaustive.test_all_small_schedules)
+Every arrival pattern with 0..2 items per tick over 5 ticks x every ... ok
+test_chunk_boundaries_independent_of_pulls_without_backpressure (tests.test_properties.TestMetamorphic.test_chunk_boundaries_independent_of_pulls_without_backpressure)
+With a ready queue big enough to never close, pull timing changes ... ok
+test_determinism_hash (tests.test_properties.TestMetamorphic.test_determinism_hash) ... ok
+test_time_scaling (tests.test_properties.TestMetamorphic.test_time_scaling) ... ok
+test_time_translation (tests.test_properties.TestMetamorphic.test_time_translation) ... ok
+test_drained_liveness (tests.test_properties.TestRandomSchedules.test_drained_liveness)
+With completion and unlimited demand every admitted item comes out. ... ok
+test_exact_rationals (tests.test_properties.TestRandomSchedules.test_exact_rationals)
+Fractions: deadline arithmetic is exact, ties are real ties. ... ok
+test_float_times (tests.test_properties.TestRandomSchedules.test_float_times) ... ok
+test_seeded_random_vs_oracle_and_invariants (tests.test_properties.TestRandomSchedules.test_seeded_random_vs_oracle_and_invariants) ... ok
+test_fixed_keeps_window_under_backpressure (tests.test_reproducer.TestBackpressureTickLoss.test_fixed_keeps_window_under_backpressure) ... ok
+test_naive_drop_tick_overstays_window (tests.test_reproducer.TestBackpressureTickLoss.test_naive_drop_tick_overstays_window) ... ok
+test_each_bug_found_by_random_search_fixed_never (tests.test_reproducer.TestFuzzFindsNaiveBugs.test_each_bug_found_by_random_search_fixed_never) ... ok
+test_reproducer_script_exit_zero (tests.test_reproducer.TestFuzzFindsNaiveBugs.test_reproducer_script_exit_zero) ... ok
+test_fixed_boundary (tests.test_reproducer.TestStaleTimer.test_fixed_boundary) ... ok
+test_naive_stale_timer_cuts_next_window_and_emits_empty (tests.test_reproducer.TestStaleTimer.test_naive_stale_timer_cuts_next_window_and_emits_empty) ... ok
+test_fixed_emits_every_d (tests.test_reproducer.TestStarvation.test_fixed_emits_every_d) ... ok
+test_naive_reset_on_arrival_starves (tests.test_reproducer.TestStarvation.test_naive_reset_on_arrival_starves) ... ok
+test_aclose_cancels_pump (tests.test_stream.TestStreamBehaviour.test_aclose_cancels_pump) ... ok
+test_completion_flush_and_stop (tests.test_stream.TestStreamBehaviour.test_completion_flush_and_stop) ... ok
+test_empty_source (tests.test_stream.TestStreamBehaviour.test_empty_source) ... ok
+test_infinite_fast_upstream_no_starvation (tests.test_stream.TestStreamBehaviour.test_infinite_fast_upstream_no_starvation)
+1 item per ms forever, D = 10 ms, K huge: a chunk every 10 ms. ... ok
+test_real_wall_clock_smoke (tests.test_stream.TestStreamBehaviour.test_real_wall_clock_smoke)
+Same adapter on the default loop with real time (small numbers). ... ok
+test_single_timer_handle (tests.test_stream.TestStreamBehaviour.test_single_timer_handle)
+One armed timer per window: arms == number of windows opened. ... ok
+test_slow_consumer_does_not_advance_upstream (tests.test_stream.TestStreamBehaviour.test_slow_consumer_does_not_advance_upstream) ... ok
+test_upstream_error_propagates_after_aclose (tests.test_stream.TestStreamBehaviour.test_upstream_error_propagates_after_aclose) ... ok
+test_random_schedules_match_oracle (tests.test_stream.TestStreamEquivalence.test_random_schedules_match_oracle) ... ok
+test_clock_jumps_exactly (tests.test_stream.TestVirtualLoop.test_clock_jumps_exactly) ... ok
+test_deadlock_detected (tests.test_stream.TestVirtualLoop.test_deadlock_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 57 tests in 16.750s
+
+OK
+
+  random: {'runs': 4000, 'chunks': 46107, 'time': 23886, 'size': 21579, 'complete': 642, 'held': 11087} 

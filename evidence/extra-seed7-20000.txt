@@ -1,0 +1,5 @@
+BW_SEED=7 BW_N=20000 python3.12 -m unittest tests.test_properties
+
+OK
+
+  random: {'runs': 20000, 'chunks': 222386, 'time': 116519, 'size': 102687, 'complete': 3180, 'held': 51405} 

@@ -1,0 +1,12 @@
+scenario      impl                         chunks live partial empty maxAge violations  first violation
+# starvation: K=1000 D=10; 1 item/tick forever, D=10, eager downstream
+starvation    naive[reset_on_arrival]           1    0       1     0    209          2  I3 chunk#0 lived 209 > D=10 (deadline reset/starved)
+starvation    fixed BatchWithin                20   19      20     0     10          0  -
+# backpressure: K=50 D=10; item every 2 ticks, pull every 35 ticks
+backpressure  naive[drop_tick_on_backpressure]      6    5       6     0     45         12  I3 chunk#0 lived 45 > D=10 (deadline reset/starved)
+backpressure  fixed BatchWithin                 8    5       8     0     10          0  -
+# stale-timer: K=3 D=10; size-K flush at t=2, next window opens at t=5
+stale-timer   naive[stale_timers]               3    1       2     1      5          2  I1 chunk#2 size 0 not in 1..3
+stale-timer   fixed BatchWithin                 2    1       1     0     10          0  -
+fixed trace sha256: b34b84a0f3fdd655ebfa7d5f9c534bd950dcd402740514588c156d8ed673a4ee
+RESULT: PASS (all bugs reproduced, fixed machine clean)
